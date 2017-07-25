@@ -55,9 +55,6 @@ class EbayWebScraper():
     
 
 
-    def read(self):
-        v = Vehicle.select().count()
-        print(v)
     
 
     def saveToDB(self,title1, numOfBids1, timeLeft1, bidPrice1,buyNowPrice1, makeYear1, mileage1):
@@ -125,7 +122,7 @@ class EbayWebScraper():
             bidPrice = float(' '.join(bidPrice.split()).replace("$","").replace(".","").replace(",","").split(" ", 1)[0])
             buyNowPrice = float(' '.join(buyNowPrice.split()).replace("$","").replace(".","").replace(",",""))
 
-            print(bidPrice)
+           
 
 
             #Casted to an integer type for possible further calculations
@@ -223,6 +220,3 @@ if __name__ == "__main__":
 
     for i in range(1,50):
         EbWbScrpr.parse( EbWbScrpr.scrape(i) )
-        
-
-    EbWbScrpr.read()
